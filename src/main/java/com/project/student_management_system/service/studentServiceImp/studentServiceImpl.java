@@ -2,6 +2,7 @@ package com.project.student_management_system.service.studentServiceImp;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.student_management_system.entity.student;
@@ -11,11 +12,10 @@ import com.project.student_management_system.service.studentService;
 @Service
 public class studentServiceImpl implements studentService {
 
+    @Autowired
     private studentRepository studentRespository;
 
-    public studentServiceImpl(studentRepository studentRespository) {
-        this.studentRespository = studentRespository;
-    }
+   
 
 
     @Override

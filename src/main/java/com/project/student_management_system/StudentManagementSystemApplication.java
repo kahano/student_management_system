@@ -17,6 +17,7 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
 	@Autowired
 	// injecting student repository object
 	private studentRepository student_Repository;
+	
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
