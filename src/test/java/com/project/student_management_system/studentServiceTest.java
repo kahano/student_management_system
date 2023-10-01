@@ -40,9 +40,11 @@ public class studentServiceTest{
 
         assertEquals("John",result.get(0).getFirstname());
         assertEquals("Bjørnson",result.get(0).getLastname());
+        assertEquals("john_bj@gmail.com",result.get(0).getEmail());
         
         assertEquals("Andreas",result.get(1).getFirstname());
         assertEquals("Karlsen",result.get(1).getLastname());
+         assertEquals("And_karl@gmail.com",result.get(1).getEmail());
        
     }
      
