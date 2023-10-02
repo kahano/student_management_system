@@ -1,6 +1,8 @@
 package com.project.student_management_system.service.studentServiceImp;
 
+
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class studentServiceImpl implements studentService {
 
     @Autowired
     private studentRepository studentRespository;
+
+
+    
 
    
 
@@ -50,6 +55,21 @@ public class studentServiceImpl implements studentService {
     public void deleteStudentById(Long id) {
         // TODO Auto-generated method stub
        studentRespository.deleteById(id);
+    }
+
+    @Override
+    public int getStudentIndex(Long id) {
+        
+        for(int i = 0; i < this.getAllstudents().size(); i++){
+            if(this.getAllstudents().get(i).getId() == id){
+                return i;
+            }
+
+
+        }
+        return -1000;
+
+        
     }
     
 }

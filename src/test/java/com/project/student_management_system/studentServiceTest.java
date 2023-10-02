@@ -2,6 +2,7 @@ package com.project.student_management_system;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
@@ -29,22 +30,21 @@ public class studentServiceTest{
     
      
     @Test
-    public void get_listOfStudents(){
+    public void get_studentByIndexTest(){
         
       when(student_repository.findAll()).thenReturn(Arrays.asList
         (new student("John", "Bjørnson", "john_bj@gmail.com"),
-        new student("Andreas", "Karlsen", "And_karl@gmail.com")));
+         new student("Ahmed", "Jonson", "ahm_bj@gmail.com")));
       
 
         List<student> result = student_service.getAllstudents();
 
-        assertEquals("John",result.get(0).getFirstname());
-        assertEquals("Bjørnson",result.get(0).getLastname());
-        assertEquals("john_bj@gmail.com",result.get(0).getEmail());
-        
-        assertEquals("Andreas",result.get(1).getFirstname());
-        assertEquals("Karlsen",result.get(1).getLastname());
-         assertEquals("And_karl@gmail.com",result.get(1).getEmail());
+        int actual_student = student_service.getStudentIndex(result.get(0).getId());
+        int not_found = student_service.getStudentIndex((long) 124653);
+        assertEquals(0,actual_student);
+        assertEquals(-1000,not_found);
+
+       
        
     }
      
