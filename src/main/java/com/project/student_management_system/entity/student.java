@@ -7,12 +7,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 
 @Entity
 @Table(name = "students")
+@AllArgsConstructor
 @Setter
 @Getter
 
@@ -32,16 +34,7 @@ public class student {
     private String email;
 
     
-    public student() {
-    }
-    
-
-    
-    public student(String firstname, String lastname, String email) {
-        this.first_name = firstname;
-        this.last_name = lastname;
-        this.email = email;
-    }
+ 
 
 
  
