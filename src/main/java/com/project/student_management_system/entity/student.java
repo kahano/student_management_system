@@ -7,10 +7,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "students")
+@Setter
+@Getter
+
 public class student {
 
     @Id
@@ -41,38 +46,7 @@ public class student {
 
  
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstname() {
-        return this.first_name;
-    }
-
-    public void setFirstname(String firstname) {
-        this.first_name = firstname;
-    }
-
-    public String getLastname() {
-        return this.last_name;
-    }
-
-    public void setLastname(String lastname) {
-        this.last_name = lastname;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
+    
     
 }
 
